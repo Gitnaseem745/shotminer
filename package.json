@@ -3,7 +3,13 @@
   "author": "Naseem Ansari (GitHub: @Gitnaseem745)",
   "version": "1.0.0",
   "description": "A developer-friendly Dribbble Design Scraper CLI tool to search and download high-quality UI/UX designs via terminal.",
-  "main": "index.js",
+  "main": "build/index.js",
+  "bin": {
+    "shotminer": "./build/index.js"
+  },
+  "files": [
+    "build/**/*"
+  ],
   "scripts": {
     "start": "node build/index.js",
     "build": "tsc",

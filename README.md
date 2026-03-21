@@ -1,4 +1,7 @@
-# Shotminer
+# 💎 Shotminer
+
+[![NPM Version](https://img.shields.io/npm/v/shotminer?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/shotminer)
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg?style=for-the-badge)](https://opensource.org/licenses/ISC)
 
 Shotminer is a powerful, developer-friendly **Dribbble Design Scraper CLI Tool**. It allows you to search and download high-quality UI/UX designs directly from your terminal using a highly aesthetic and modular setup built with Node.js, TypeScript, and Puppeteer.
 
@@ -17,6 +20,13 @@ Shotminer is a powerful, developer-friendly **Dribbble Design Scraper CLI Tool**
 
 ## Installation
 
+### Via NPM (Recommended)
+You can install the tool globally so that it's accessible anywhere on your computer:
+```bash
+npm install -g shotminer
+```
+
+### From Source
 1. Clone the repository:
    ```bash
    git clone https://github.com/Gitnaseem745/shotminer.git
@@ -43,15 +53,26 @@ DESIGNS_SUBDIR=designs
 
 ## Usage
 
-You can use the CLI tool in varying setups. Once compiled, it acts as a standalone script.
+### Global NPM Usage
+If you installed the package via NPM (`npm i -g shotminer`), you can execute the CLI immediately from anywhere:
+```bash
+shotminer "dashboard UI" -l 5
+```
 
-### Using Development Mode
+If you prefer to run it dynamically without installing:
+```bash
+npx shotminer "dashboard UI" -l 5
+```
+
+### From Source
+
+**Using Development Mode:**
 ```bash
 npm run dev
 ```
 Wait for the prompt and enter your search term (e.g., `mobile app UI design`).
 
-### Compiled Usage
+**Compiled Usage:**
 First build the TypeScript source:
 ```bash
 npm run build

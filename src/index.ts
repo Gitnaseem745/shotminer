@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { runCLI } from './cli/index.js';
 
 process.on('unhandledRejection', (err) => {
