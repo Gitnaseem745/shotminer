@@ -1,0 +1,53 @@
+{
+  "name": "shotminer",
+  "author": "Naseem Ansari (GitHub: @Gitnaseem745)",
+  "version": "1.0.0",
+  "description": "A developer-friendly Dribbble Design Scraper CLI tool to search and download high-quality UI/UX designs via terminal.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node build/index.js",
+    "build": "tsc",
+    "dev": "nodemon --watch src -e ts --exec \"node --no-warnings --loader ts-node/esm\" src/index.ts",
+    "clean": "rimraf build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gitnaseem745/shotminer.git"
+  },
+  "keywords": [
+    "scraper",
+    "cli",
+    "dribbble",
+    "ui",
+    "ux",
+    "design",
+    "puppeteer",
+    "image-downloader",
+    "web-scraping",
+    "typescript",
+    "tool"
+  ],
+  "bugs": {
+    "url": "https://github.com/Gitnaseem745/shotminer/issues"
+  },
+  "homepage": "https://github.com/Gitnaseem745/shotminer#readme",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "commander": "^14.0.3",
+    "dotenv": "^17.3.1",
+    "inquirer": "^8.2.7",
+    "ora": "^5.4.1",
+    "pino": "^10.3.1",
+    "pino-pretty": "^13.1.3",
+    "puppeteer": "^24.40.0"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^8.2.12",
+    "@types/node": "^25.5.0",
+    "nodemon": "^3.1.14",
+    "rimraf": "^6.1.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
