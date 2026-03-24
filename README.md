@@ -5,12 +5,13 @@
 
 Shotminer is a powerful, developer-friendly **Dribbble Design Scraper CLI Tool**. It allows you to search and download high-quality UI/UX designs directly from your terminal using a highly aesthetic and modular setup built with Node.js, TypeScript, and Puppeteer.
 
-## Features
+## 🚀 Features (v1.1.0+)
 
-- 🔍 **Automated Scraping:** Retrieve designs using just a search prompt.
-- ⏬ **Bulk Downloading:** Downloads images sequentially to a well-organized folder structure constraint to your prompt.
-- 🎨 **Beautiful CLI UX:** Utilizes interactive prompts and status spinners using Commander, Inquirer, and Ora.
-- ⚡ **Puppeteer Engine:** Efficiently fetches data bypassing general restrictions.
+- 🔍 **Deep Scraping:** Navigates into individual shot pages to extract **all available images**, not just the thumbnail.
+- 🖼️ **Asset Controls:** New CLI flags to control output format, resolution, and quality.
+- ⚡ **Sharp Integration:** High-performance image processing for fast conversions and resizing.
+- ⏬ **Multi-Image Support:** Downloads images sequentially to organized per-shot subfolders.
+- 🎨 **Beautiful CLI UX:** Enhanced output showing real-time processing status and image counts.
 - 🛠️ **Developer Friendly:** Completely typed, modular, and optimized for contribution.
 
 ## Pre-requisites
@@ -21,27 +22,47 @@ Shotminer is a powerful, developer-friendly **Dribbble Design Scraper CLI Tool**
 ## Installation
 
 ### Via NPM (Recommended)
-You can install the tool globally so that it's accessible anywhere on your computer:
+You can install the tool globally:
 ```bash
 npm install -g shotminer
 ```
 
-### From Source
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Gitnaseem745/shotminer.git
-   cd shotminer
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+## Usage
 
-## Setup
+### Global NPM Usage
+Execute the CLI from anywhere:
+```bash
+shotminer "dashboard UI" -l 5 -f png -r 4k -q high
+```
 
-Create a `.env` file in the root of the project to configure the scraper (optional):
+### Options:
+- `-l, --limit <number>` : Limit the number of shots to fetch.
+- `-f, --format <format>` : Image format: `png`, `jpg`, or `webp` (Default: `webp`).
+- `-r, --resolution <res>` : Resolution: `original`, `1080p`, or `4k` (Default: `original`).
+- `-q, --quality <level>` : Compression quality: `high`, `medium`, or `low` (Default: `high`).
+- `-h, --help` : Show help for command.
+
+---
+
+## 📂 Folder Structure
+
+The application organizes downloads into a structured hierarchy based on your query and individual shot titles:
+
+```text
+designs/
+└── dashboard_ui/
+    ├── shot_title_1/
+    │   ├── image_1.png
+    │   └── image_2.png
+    └── shot_title_2/
+        └── image_1.png
+```
+
+## Setup (Optional)
+
+Create a `.env` file in the root of the project to configure defaults:
 ```env
-# Disable or enable headless mode (default: false for true headless execution)
+# Disable or enable headless mode (default: true)
 HEADLESS=true
 
 # Limit how many pictures you want per command execution
@@ -51,43 +72,3 @@ RESULTS_LIMIT=10
 DESIGNS_SUBDIR=designs
 ```
 
-## Usage
-
-### Global NPM Usage
-If you installed the package via NPM (`npm i -g shotminer`), you can execute the CLI immediately from anywhere:
-```bash
-shotminer "dashboard UI" -l 5
-```
-
-If you prefer to run it dynamically without installing:
-```bash
-npx shotminer "dashboard UI" -l 5
-```
-
-### From Source
-
-**Using Development Mode:**
-```bash
-npm run dev
-```
-Wait for the prompt and enter your search term (e.g., `mobile app UI design`).
-
-**Compiled Usage:**
-First build the TypeScript source:
-```bash
-npm run build
-```
-
-Then execute it via node:
-```bash
-npm start -- "dashboard UI" -l 5
-```
-
-Options:
-- `-l, --limit <number>` : Limit the number of designs to fetch.
-- `-h, --help` : Show help for command.
-
-## Folder Structure
-
-The application will construct a folder based on your prompt query. E.g., for `dashboard UI` it will yield the path:
-`./designs/dashboard_ui/design_1.png`
