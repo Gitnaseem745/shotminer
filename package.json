@@ -1,7 +1,7 @@
 {
   "name": "shotminer",
   "author": "Naseem Ansari (GitHub: @Gitnaseem745)",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A developer-friendly Dribbble Design Scraper CLI tool to search and download high-quality UI/UX designs via terminal.",
   "main": "build/index.js",
   "bin": {
