@@ -111,3 +111,7 @@ Thumbs.db
 # Output directory for CLI
 build/
 designs/
+
+# unwanted
+context.md
+release_guide.md
